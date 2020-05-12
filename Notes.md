@@ -42,3 +42,12 @@ Based on the docker-compose.yml file, the components (aka services) are:
 I have decided that I'll work on creating a Spring Boot version of catalogue first.
 
 So we have a catalogue directory with its own docker-compose.yml. It only contains the catalogue-db configuration, and that is the data we will be using to build the catalogue service on.
+
+The connection details to catalogue-db are:
+catalogue_user:default_password@tcp(catalogue-db:3306)
+
+```
+username: catalogue_user
+password: default_password
+"catalogue-db" I think is what docker uses in place of the actual IP address
+```
