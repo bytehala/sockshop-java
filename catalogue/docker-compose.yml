@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+    catalogue-db:
+        build:
+            context: ./docker/catalogue-db/
+        image: weaveworksdemos/catalogue-db
+        hostname: catalogue-db
+        restart: always
+        environment:
+            - reschedule=on-node-failure
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_ALLOW_EMPTY_PASSWORD=true
+            - MYSQL_DATABASE=socksdb
+        ports:
+            - "3306:3306"
